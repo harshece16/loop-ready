@@ -6,6 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Loop Ready</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23CFD4DD' stroke-width='5'/%3E%3Cpath d='M16 5a11 11 0 0 1 9.5 16.5' fill='none' stroke='%232B4EFF' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#F6F7FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0C10" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,400..900&display=swap">
@@ -23,6 +25,7 @@ h1 svg { width: 1.8rem; height: 1.8rem; }
 p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 input[type=password] { width: 100%; padding: 0.7rem 0.8rem; font: inherit; color: inherit; background: var(--bg); border: 1px solid var(--line-2); border-radius: 10px; }
 input[type=password]:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button, input, label { touch-action: manipulation; }
 label { display: flex; gap: 0.5rem; align-items: center; font-size: 0.9rem; color: var(--muted); }
 button { padding: 0.75rem; font: 650 1rem "Mona Sans", system-ui, sans-serif; color: var(--bg); background: var(--ink); border: 0; border-radius: 12px; cursor: pointer; }
 button:hover { background: var(--accent); }
@@ -34,7 +37,7 @@ button:disabled { opacity: 0.6; cursor: wait; }
 <form id="f" hidden>
   <h1><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="var(--line-2)" stroke-width="5"/><path d="M16 5a11 11 0 0 1 9.5 16.5" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/></svg>Loop Ready</h1>
   <p>This site is private. Enter the passphrase to open it.</p>
-  <input type="password" id="pw" autocomplete="current-password" aria-label="Passphrase" required>
+  <input type="password" id="pw" name="passphrase" autocomplete="current-password" aria-label="Passphrase" required>
   <label><input type="checkbox" id="keep" checked> Remember on this device</label>
   <button id="go">Open</button>
   <p id="msg" role="alert"></p>
